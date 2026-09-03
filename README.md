@@ -2,8 +2,7 @@
 
 A full-stack AI knowledge assistant. Users create an account, upload documents to a personal knowledge base, and ask questions about them through a chat interface. Answers are generated with retrieval-augmented generation (RAG): relevant chunks are retrieved from the uploaded documents and passed to an LLM to ground its response.
 
-**Live:** <https://your-meshai-subdomain.example.com> _(replace with your actual deployed subdomain)_
-
+**Live:** 
 ## Tech stack
 
 - React + TypeScript (Vite, React Router)
@@ -65,4 +64,4 @@ Do not commit either `.env` file — copy the corresponding `.env.example` and f
 
 ## Project Pitch Video
 
-Check out this video, where I describe my project and some challenges I faced while building it: _(add your Google Drive link here)_
+Check out this video, where I describe my project and some challenges I faced while building it: 
