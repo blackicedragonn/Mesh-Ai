@@ -1,0 +1,50 @@
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 145px;
+  background: #f6f3ff;
+  border-radius: 16px;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgba(28, 28, 28, 0.5);
+}
+
+.upload-area__label {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  cursor: pointer;
+  text-underline-offset: 2px;
+  text-decoration: none;
+}
+
+.upload-area__label svg {
+  margin: 0 auto 8px;
+}
+
+.upload-area__label:hover {
+  color: rgba(28, 28, 28);
+}
+
+.upload-area__label:hover svg path {
+  stroke-opacity: 1;
+}
+
+.upload-area__label .underline {
+  text-decoration: underline;
+}
+
+.upload-area__input {
+  display: none;
+}
+
+@media (max-width: 394px) {
+  .upload-area__label span {
+    display: none;
+  }
+}

@@ -1,0 +1,136 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+}
+
+.header__logo {
+  height: 32px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header__nav-link {
+  color: rgba(28, 28, 28, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header__nav-link:hover {
+  color: #1c1c1c;
+}
+
+.header__nav-link_active {
+  color: #1c1c1c;
+}
+
+.header__account {
+  position: relative;
+}
+
+.header__dropdown-btn {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1c1c1c;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: #f6f3ff;
+}
+
+.header__dropdown-btn:hover {
+  background-color: #ece6ff;
+}
+
+.header__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background-color: #ffffff;
+  border: 1px solid rgba(28, 28, 28, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 6px;
+  z-index: 102;
+}
+
+.header__logout-btn {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #d64545;
+}
+
+.header__logout-btn:hover {
+  background-color: rgba(214, 69, 69, 0.08);
+}
+
+.header__menu-btn {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.header__menu-btn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .header {
+    justify-content: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid rgb(0 0 0 / 0.1);
+  }
+
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__logo {
+    margin-left: auto;
+  }
+
+  /* Nav is hidden by default on mobile */
+  .header__nav {
+    position: fixed;
+    top: 47px;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    max-width: 255px;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 101;
+    display: none;
+    border-top: 1px solid rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    justify-content: end;
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  /* Shown when the menu is open */
+  .header__nav_mobile {
+    display: flex;
+  }
+
+  /* Open the account dropdown upward on mobile, since the button can sit
+     low enough in the nav panel that opening downward pushes the menu
+     below the viewport */
+  .header__menu {
+    top: auto;
+    bottom: calc(100% + 8px);
+  }
+}

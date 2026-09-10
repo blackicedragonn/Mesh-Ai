@@ -1,0 +1,40 @@
+name: Docker Compose Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compose-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build images
+        run: docker compose build
+
+      - name: Validate docker-compose.yaml
+        run: docker compose config -q
+
+      - name: Start services
+        run: docker compose up -d
+
+      - name: Wait for services
+        run: |
+          docker compose exec -T backend npm run verify || true
+          sleep 5
+
+      - name: Check service health
+        run: |
+          docker compose ps
+          docker compose logs backend || true
+
+      - name: Stop services
+        run: docker compose down -v

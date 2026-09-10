@@ -1,0 +1,43 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./server
+    environment:
+      MONGO_URI: mongodb://mongo:27017/meshai
+      JWT_SECRET: ${JWT_SECRET}
+      NEBIUS_API_KEY: ${NEBIUS_API_KEY}
+      NODE_ENV: production
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  frontend:
+    build: ./client
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  mongo_data:
+  caddy_data:
+  caddy_config:
+  uploads_data:

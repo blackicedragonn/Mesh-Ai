@@ -1,0 +1,47 @@
+{
+  "name": "ai-se_project_mesh-ai",
+  "version": "1.0.0",
+  "description": "MeshAI backend scaffold — a document-based AI Q&A platform",
+  "main": "index.js",
+  "type": "module",
+  "part": "2",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "NODE_ENV=development nodemon --exec tsx src/index.ts",
+    "lint": "eslint src/",
+    "verify": "node scripts/verify-live.mjs"
+  },
+  "keywords": [],
+  "author": "Marin",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.3",
+    "morgan": "^1.12.0",
+    "multer": "^2.2.0",
+    "openai": "^6.49.0",
+    "pdf-parse": "^2.4.5",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.2.0",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.67.0"
+  }
+}

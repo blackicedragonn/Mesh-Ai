@@ -1,0 +1,11 @@
+{$SITE_ADDRESS} {
+	handle /api/* {
+		reverse_proxy backend:3000
+	}
+
+	handle /health {
+		reverse_proxy backend:3000
+	}
+
+	reverse_proxy frontend:80
+}
