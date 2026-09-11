@@ -2,7 +2,7 @@
 
 A full-stack AI knowledge assistant. Users create an account, upload documents to a personal knowledge base, and ask questions about them through a chat interface. Answers are generated with retrieval-augmented generation (RAG): relevant chunks are retrieved from the uploaded documents and passed to an LLM to ground its response.
 
-**Live:** <https://mesh-ai-production.up.railway.app>
+**Live:** <http://54.90.197.159> _(AWS EC2, us-east-1)_
 
 ## Tech stack
 

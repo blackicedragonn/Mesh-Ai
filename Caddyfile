@@ -1,4 +1,8 @@
-{$SITE_ADDRESS} {
+{
+	auto_https off
+}
+
+http://{$SITE_ADDRESS} {
 	handle /api/* {
 		reverse_proxy backend:3000
 	}
